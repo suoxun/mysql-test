@@ -1,0 +1,31 @@
+
+-- 查看事务隔离级别
+select @@global.tx_isolation;
+
+-- 还原数据
+UPDATE demo SET flag = 'true';
+COMMIT;
+
+-- 行级锁
+SET autocommit = 0;
+SELECT * FROM demo WHERE id = 1;
+UPDATE demo SET flag = 'false' WHERE id =1;
+COMMIT;
+
+-- 表级锁
+SET autocommit = 0;
+SELECT * FROM demo WHERE id_other = 1;
+UPDATE demo SET flag = 'false' WHERE id_other = 1;
+COMMIT;
+
+-- 还有一个是共享锁，用的较少，感兴趣的自己去查下资料
+
+-- 悲观锁中的排它锁(行级锁)
+SET autocommit = 0;
+SELECT * FROM demo WHERE id >= 1 AND id <= 2 FOR UPDATE;
+COMMIT;
+
+-- 悲观锁中的排它锁(表级锁)
+SET autocommit = 0;
+SELECT * FROM demo WHERE id_other = 1 FOR UPDATE;
+COMMIT;

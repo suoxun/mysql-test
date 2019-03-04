@@ -1,0 +1,22 @@
+
+
+SET profiling = 1;
+
+SELECT
+	*
+FROM
+	demo_one a
+LEFT JOIN demo_two b ON a.id_one = b.id_one
+WHERE
+	b.id_two = 1;
+
+SHOW PROFILES;
+
+-- 上面三个一起用
+
+-- 通常Sending data慢的较多
+SHOW PROFILE cpu,
+ block io FOR QUERY 25;
+
+-- 查看当前进程
+SHOW PROCESSLIST;

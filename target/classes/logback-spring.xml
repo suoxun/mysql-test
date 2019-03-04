@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<springProperty scope="context" name="logLevel" source="log.level"
+		defaultValue="debug" />
+	
+	<!-- 如果能找到变量则会创建两个日志,根据情况用defaultValue -->	
+	<springProperty scope="context" name="logFile" source="log.path"
+		defaultValue="logs/mysql-test/mysql-test.log" />
+
+	<!-- 不引入它启动报错 -->
+	<include resource="org/springframework/boot/logging/logback/defaults.xml" />
+
+	<!-- 日志文件 -->
+	<property name="LOG_FILE" value="${logFile}" />
+
+	<!-- 日志输出格式(提示信息) -->
+	<property name="FILE_LOG_PATTERN"
+		value="%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level  %class:%line %logger - %msg%n " />
+
+	<!-- 日志输出格式(错误信息) -->
+	<property name="ERROR_LOG_PATTERN"
+		value="%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level  %class:%line - %msg%n " />
+
+	<!-- 控制台输出 -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符 -->
+			<pattern>${FILE_LOG_PATTERN}</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="ALL"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<encoder>
+			<pattern>${FILE_LOG_PATTERN}</pattern>
+		</encoder>
+		<file>${LOG_FILE}</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_FILE}.%d{yyyy-MM-dd}.%i</fileNamePattern>
+			<maxHistory>30</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy  
+		       class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">   
+		       <maxFileSize>100MB</maxFileSize>  
+		    </timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+
+	<!-- 多日志环境配置 -->
+	<root level="${logLevel}">
+		<appender-ref ref="ALL" />
+		<appender-ref ref="STDOUT" />
+	</root>
+	
+	<logger name="org.apache.http">
+	   <level value="info" />
+	</logger>
+	
+	<logger name="com.netflix">
+	   <level value="info" />
+	</logger>
+	
+	<logger name="com.ulisesbocchio.jasyptspringboot">
+	   <level value="info" />
+	</logger>
+	
+	<logger name="org.springframework.beans.factory.support.DefaultListableBeanFactory">
+	   <level value="info" />
+	</logger>
+	
+	<logger name="org.springframework.scheduling">
+	   <level value="info" />
+	</logger>
+	
+	<logger name="com.zaxxer.hikari">
+	   <level value="info" />
+	</logger>
+
+</configuration>

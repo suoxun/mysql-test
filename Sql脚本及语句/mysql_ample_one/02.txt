@@ -1,0 +1,35 @@
+
+
+-- 行级锁的例子
+SELECT * FROM demo WHERE id = 1;
+UPDATE demo SET flag = 'false' WHERE id = 1;
+SELECT * FROM demo WHERE id = 2;
+UPDATE demo SET flag = 'false' WHERE id = 2;
+
+-- 行级锁2的例子(锁住范围)
+SELECT * FROM demo WHERE id = 1;
+UPDATE demo SET flag = 'false' WHERE id = 1;
+SELECT * FROM demo WHERE id = 2;
+UPDATE demo SET flag = 'false' WHERE id = 2;
+SELECT * FROM demo WHERE id = 1 OR id = 3;
+UPDATE demo SET flag = 'false' WHERE id = 1 OR id =3;
+
+-- 表级锁的例子
+SELECT * FROM demo WHERE id = 2;
+UPDATE demo SET flag = 'false' WHERE id = 2;
+SELECT * FROM demo WHERE id = 3;
+UPDATE demo SET flag = 'false' WHERE id = 3;
+
+-- 悲观锁中的排它锁(行级锁)的例子
+SELECT * FROM demo WHERE id = 1;
+UPDATE demo SET flag = 'false' WHERE id = 1;
+SELECT * FROM demo WHERE id = 2;
+UPDATE demo SET flag = 'false' WHERE id = 2;
+
+-- 悲观锁中的排它锁(表级锁)的例子
+SELECT * FROM demo WHERE id = 2;
+UPDATE demo SET flag = 'false' WHERE id = 2;
+SELECT * FROM demo WHERE id = 3;
+UPDATE demo SET flag = 'false' WHERE id = 3;
+
+

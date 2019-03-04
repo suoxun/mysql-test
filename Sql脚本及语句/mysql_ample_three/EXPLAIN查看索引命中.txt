@@ -1,0 +1,30 @@
+
+
+
+-- 索引最左原则
+
+-- 第一组
+
+EXPLAIN SELECT * FROM `demo_one` WHERE id_one = 1;
+
+EXPLAIN SELECT * FROM `demo_one` WHERE id_one_name01 = '小明01';
+
+EXPLAIN SELECT * FROM `demo_one` WHERE id_one_name02 = '小明01';
+
+EXPLAIN SELECT * FROM `demo_one` WHERE id_one_name03 = '小明01';
+
+EXPLAIN SELECT * FROM `demo_one` WHERE id_one_name04 = '小明01';
+
+-- 第二组
+
+EXPLAIN SELECT * FROM `demo_one` WHERE id_one_name02 = '小明01' AND id_one_name01 = '小明01';
+
+EXPLAIN SELECT * FROM `demo_one` WHERE id_one_name02 = '小明01' AND id_one_name03 = '小明01';
+
+EXPLAIN SELECT * FROM `demo_one` WHERE id_one_name02 = '小明01' AND id_one_name04 = '小明01';
+
+EXPLAIN SELECT * FROM `demo_one` WHERE id_one_name04 = '小明01' AND id_one_name03 = '小明01';
+
+EXPLAIN SELECT * FROM `demo_one` WHERE id_one_name01 = '小明01' AND id_one_name03 = '小明01';
+
+EXPLAIN SELECT * FROM `demo_one` WHERE id_one_name01 = '小明01' AND id_one_name04 = '小明01';
