@@ -39,7 +39,6 @@ public class MysqlAmpleApplicationTests {
 		for (Demo bean : list) {
 			System.out.println(bean.getFlag());
 		}
-
 	}
 	
 }
