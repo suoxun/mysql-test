@@ -3,7 +3,7 @@ server:
   port: 8888
   
 log:
-  level: debug
+  level: info
   path: /logs/mysql-test/mysql-test.log # 最前面加/为绝对路径
   
 spring:

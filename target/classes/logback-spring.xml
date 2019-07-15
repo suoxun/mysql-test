@@ -46,6 +46,9 @@
 		</rollingPolicy>
 	</appender>
 
+	<!-- mybatis日志打印-->
+	<logger name="com.mysql.ample.mapper" level="DEBUG" />
+
 	<!-- 多日志环境配置 -->
 	<root level="${logLevel}">
 		<appender-ref ref="ALL" />
