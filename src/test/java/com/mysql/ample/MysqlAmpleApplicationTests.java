@@ -37,7 +37,7 @@ public class MysqlAmpleApplicationTests {
 	public void test01 () {
 		List<Demo> list = demoMapper.selectAll();
 		for (Demo bean : list) {
-			System.out.println(bean.getFlag());
+			System.out.println(bean.getId());
 		}
 	}
 	
