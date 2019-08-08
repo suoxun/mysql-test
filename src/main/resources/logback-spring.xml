@@ -50,7 +50,7 @@
 	<!-- 理论上这个地方没有用 -->
 	<!--<logger name="org.apache.ibatis" level="INFO" />
 	<logger name="java.sql" level="INFO" />-->
-	<logger name="com.mysql.ample.mapper" level="DEBUG" />
+	<logger name="com.mysql.ample.mapper" level="INFO" />
 
 	<!-- 多日志环境配置 -->
 	<root level="${logLevel}">
