@@ -3,6 +3,7 @@ package com.mysql.ample;
 import com.mysql.ample.mapper.DemoMapper;
 import com.mysql.ample.model.Demo;
 import com.mysql.ample.service.TransactionTestOne;
+import com.mysql.ample.service.TransactionTestTwo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -24,6 +25,9 @@ public class MysqlAmpleApplicationTests {
 
 	@Autowired
 	TransactionTestOne transactionTestOne;
+
+	@Autowired
+	TransactionTestTwo transactionTestTwo;
 
 	@Test
 	public void ready() {
@@ -58,6 +62,16 @@ public class MysqlAmpleApplicationTests {
 	@Test
 	public void test04 () {
 		transactionTestOne.testFive();
+	}
+
+	@Test
+	public void test05 () {
+		transactionTestTwo.testOne();
+	}
+
+	@Test
+	public void test06 () {
+		transactionTestTwo.testTwo();
 	}
 	
 }
