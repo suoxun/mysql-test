@@ -1,4 +1,4 @@
+ï»¿
 
-
--- Ëø¾ºÕù×´Ì¬
+-- é”ç«äº‰çŠ¶æ€
 show status like 'innodb_row_lock%';

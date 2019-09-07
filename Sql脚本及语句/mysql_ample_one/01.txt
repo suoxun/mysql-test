@@ -1,31 +1,31 @@
 
--- ²é¿´ÊÂÎñ¸ôÀë¼¶±ð
+-- æŸ¥çœ‹äº‹åŠ¡éš”ç¦»çº§åˆ«
 select @@global.tx_isolation;
 
--- »¹Ô­Êý¾Ý
+-- è¿˜åŽŸæ•°æ®
 UPDATE demo SET flag = 'true';
 COMMIT;
 
--- ÐÐ¼¶Ëø
+-- è¡Œçº§é”
 SET autocommit = 0;
 SELECT * FROM demo WHERE id = 1;
 UPDATE demo SET flag = 'false' WHERE id =1;
 COMMIT;
 
--- ±í¼¶Ëø
+-- è¡¨çº§é”
 SET autocommit = 0;
 SELECT * FROM demo WHERE id_other = 1;
 UPDATE demo SET flag = 'false' WHERE id_other = 1;
 COMMIT;
 
--- »¹ÓÐÒ»¸öÊÇ¹²ÏíËø£¬ÓÃµÄ½ÏÉÙ£¬¸ÐÐËÈ¤µÄ×Ô¼ºÈ¥²éÏÂ×ÊÁÏ
+-- è¿˜æœ‰ä¸€ä¸ªæ˜¯å…±äº«é”ï¼Œç”¨çš„è¾ƒå°‘ï¼Œæ„Ÿå…´è¶£çš„è‡ªå·±åŽ»æŸ¥ä¸‹èµ„æ–™
 
--- ±¯¹ÛËøÖÐµÄÅÅËüËø(ÐÐ¼¶Ëø)
+-- æ‚²è§‚é”ä¸­çš„æŽ’å®ƒé”(è¡Œçº§é”)
 SET autocommit = 0;
 SELECT * FROM demo WHERE id >= 1 AND id <= 2 FOR UPDATE;
 COMMIT;
 
--- ±¯¹ÛËøÖÐµÄÅÅËüËø(±í¼¶Ëø)
+-- æ‚²è§‚é”ä¸­çš„æŽ’å®ƒé”(è¡¨çº§é”)
 SET autocommit = 0;
 SELECT * FROM demo WHERE id_other = 1 FOR UPDATE;
 COMMIT;

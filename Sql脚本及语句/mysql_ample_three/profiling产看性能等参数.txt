@@ -1,4 +1,4 @@
-
+﻿
 
 SET profiling = 1;
 
@@ -12,11 +12,11 @@ WHERE
 
 SHOW PROFILES;
 
--- ��������һ����
+-- 上面三个一起用
 
--- ͨ��Sending data���Ľ϶�
+-- 通常Sending data慢的较多
 SHOW PROFILE cpu,
  block io FOR QUERY 25;
 
--- �鿴��ǰ����
+-- 查看当前进程
 SHOW PROCESSLIST;

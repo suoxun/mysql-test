@@ -1,16 +1,16 @@
+ï»¿
 
-
--- ²é¿´ÅÅÐòÏà¹Ø²ÎÊý
--- max_length_for_sort_dataÓ°ÏìÁ½ÖÖÅÅÐòËã·¨
--- innodb_sort_buffer_sizeÓ°ÏìÊÇ·ñ·Ö¶ÎIO
+-- æŸ¥çœ‹æŽ’åºç›¸å…³å‚æ•°
+-- max_length_for_sort_dataå½±å“ä¸¤ç§æŽ’åºç®—æ³•
+-- innodb_sort_buffer_sizeå½±å“æ˜¯å¦åˆ†æ®µIO
 show variables like '%sort%';
 
--- order by Ò²ÄÜÃüÖÐË÷Òý£¬×ÔÔöÀàÐÍË÷Òý±ÈUUIDË÷ÒýÐ§ÂÊ¸ü¸ß£¨ÒòÎªË÷Òýlegth¶Ì£©
--- ËäÈ»rowsµÄÊýÁ¿ÈÔÈ»ÊÇÈ«±í£¬µ«Êµ¼ÊÃüÖÐµÄË÷Òýorder byÓï¾ä¸ù±¾
--- ²»ÐèÓÃËã·¨ÔÙÅÅÐòÒ»±é£¬ÒòÎªË÷ÒýÊÇÁ¬ÐøµÄ£¬¶øÃ»ÓÐË÷ÒýµÄ
--- order by¾Í»á°ÑÐèÒªÅÅÐòµÄ×Ö¶ÎÁÐÄÃ³öÀ´£¬ÔÚmax_length_for_sort_data
--- »º´æÖÐÈ¥ÅÅÐò£¬ÅÅÐòÍêÁËÔÙÕÒ¶ÔÓ¦µÄÁÐÆäËû×Ö¶ÎÈ¥·µ»Ø½á¹û
--- ÕâÑù²»½ö½ö±ÈË÷Òý¶à½øÐÐÁËºÜ¶à¼ÆËã£¬¶øÇÒÈç¹û´ó²¢·¢ÏÂ»¹
--- ÈÝÒ×Ìø³ö»º´æ²úÉú´óÁ¿IO²Ù×÷£¬´ó²¢·¢ÏÂ»òÐ§ÂÊ²îºÜ¶à±¶
+-- order by ä¹Ÿèƒ½å‘½ä¸­ç´¢å¼•ï¼Œè‡ªå¢žç±»åž‹ç´¢å¼•æ¯”UUIDç´¢å¼•æ•ˆçŽ‡æ›´é«˜ï¼ˆå› ä¸ºç´¢å¼•legthçŸ­ï¼‰
+-- è™½ç„¶rowsçš„æ•°é‡ä»ç„¶æ˜¯å…¨è¡¨ï¼Œä½†å®žé™…å‘½ä¸­çš„ç´¢å¼•order byè¯­å¥æ ¹æœ¬
+-- ä¸éœ€ç”¨ç®—æ³•å†æŽ’åºä¸€éï¼Œå› ä¸ºç´¢å¼•æ˜¯è¿žç»­çš„ï¼Œè€Œæ²¡æœ‰ç´¢å¼•çš„
+-- order byå°±ä¼šæŠŠéœ€è¦æŽ’åºçš„å­—æ®µåˆ—æ‹¿å‡ºæ¥ï¼Œåœ¨max_length_for_sort_data
+-- ç¼“å­˜ä¸­åŽ»æŽ’åºï¼ŒæŽ’åºå®Œäº†å†æ‰¾å¯¹åº”çš„åˆ—å…¶ä»–å­—æ®µåŽ»è¿”å›žç»“æžœ
+-- è¿™æ ·ä¸ä»…ä»…æ¯”ç´¢å¼•å¤šè¿›è¡Œäº†å¾ˆå¤šè®¡ç®—ï¼Œè€Œä¸”å¦‚æžœå¤§å¹¶å‘ä¸‹è¿˜
+-- å®¹æ˜“è·³å‡ºç¼“å­˜äº§ç”Ÿå¤§é‡IOæ“ä½œï¼Œå¤§å¹¶å‘ä¸‹æˆ–æ•ˆçŽ‡å·®å¾ˆå¤šå€
 EXPLAIN SELECT * FROM demo_two ORDER BY id_two;
 EXPLAIN SELECT * FROM demo_two ORDER BY id_one;

@@ -1,30 +1,30 @@
+๏ปฟ
 
 
+-- ็ดขๅผ•ๆ€ๅทฆๅๅ
 
--- ห๗าýื๎ื๓ิญิ๒
-
--- ตฺาปื้
+-- ็ฌฌไธ€็ป
 
 EXPLAIN SELECT * FROM `demo_one` WHERE id_one = 1;
 
-EXPLAIN SELECT * FROM `demo_one` WHERE id_one_name01 = 'ะกร๗01';
+EXPLAIN SELECT * FROM `demo_one` WHERE id_one_name01 = 'ๅฐๆ01';
 
-EXPLAIN SELECT * FROM `demo_one` WHERE id_one_name02 = 'ะกร๗01';
+EXPLAIN SELECT * FROM `demo_one` WHERE id_one_name02 = 'ๅฐๆ01';
 
-EXPLAIN SELECT * FROM `demo_one` WHERE id_one_name03 = 'ะกร๗01';
+EXPLAIN SELECT * FROM `demo_one` WHERE id_one_name03 = 'ๅฐๆ01';
 
-EXPLAIN SELECT * FROM `demo_one` WHERE id_one_name04 = 'ะกร๗01';
+EXPLAIN SELECT * FROM `demo_one` WHERE id_one_name04 = 'ๅฐๆ01';
 
--- ตฺถþื้
+-- ็ฌฌไบ็ป
 
-EXPLAIN SELECT * FROM `demo_one` WHERE id_one_name02 = 'ะกร๗01' AND id_one_name01 = 'ะกร๗01';
+EXPLAIN SELECT * FROM `demo_one` WHERE id_one_name02 = 'ๅฐๆ01' AND id_one_name01 = 'ๅฐๆ01';
 
-EXPLAIN SELECT * FROM `demo_one` WHERE id_one_name02 = 'ะกร๗01' AND id_one_name03 = 'ะกร๗01';
+EXPLAIN SELECT * FROM `demo_one` WHERE id_one_name02 = 'ๅฐๆ01' AND id_one_name03 = 'ๅฐๆ01';
 
-EXPLAIN SELECT * FROM `demo_one` WHERE id_one_name02 = 'ะกร๗01' AND id_one_name04 = 'ะกร๗01';
+EXPLAIN SELECT * FROM `demo_one` WHERE id_one_name02 = 'ๅฐๆ01' AND id_one_name04 = 'ๅฐๆ01';
 
-EXPLAIN SELECT * FROM `demo_one` WHERE id_one_name04 = 'ะกร๗01' AND id_one_name03 = 'ะกร๗01';
+EXPLAIN SELECT * FROM `demo_one` WHERE id_one_name04 = 'ๅฐๆ01' AND id_one_name03 = 'ๅฐๆ01';
 
-EXPLAIN SELECT * FROM `demo_one` WHERE id_one_name01 = 'ะกร๗01' AND id_one_name03 = 'ะกร๗01';
+EXPLAIN SELECT * FROM `demo_one` WHERE id_one_name01 = 'ๅฐๆ01' AND id_one_name03 = 'ๅฐๆ01';
 
-EXPLAIN SELECT * FROM `demo_one` WHERE id_one_name01 = 'ะกร๗01' AND id_one_name04 = 'ะกร๗01';
+EXPLAIN SELECT * FROM `demo_one` WHERE id_one_name01 = 'ๅฐๆ01' AND id_one_name04 = 'ๅฐๆ01';

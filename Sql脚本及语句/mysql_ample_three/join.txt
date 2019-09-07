@@ -1,13 +1,13 @@
+ï»¿
 
-
--- ²é¿´¸÷ÖÖmysqlÏµÍ³²ÎÊý
+-- æŸ¥çœ‹å„ç§mysqlç³»ç»Ÿå‚æ•°
 show VARIABLES;
 
--- ²é¿´¸÷ÖÖmysqlÏµÍ³²ÎÊý
+-- æŸ¥çœ‹å„ç§mysqlç³»ç»Ÿå‚æ•°
 show VARIABLES LIKE 'slow%';
 show VARIABLES LIKE 'long%';
 
--- ²ú¿´joinÓï¾äË÷ÒýÃüÖÐ
+-- äº§çœ‹joinè¯­å¥ç´¢å¼•å‘½ä¸­
 EXPLAIN SELECT
 	*
 FROM
@@ -16,5 +16,5 @@ LEFT JOIN demo_two b ON a.id_one = b.id_one
 WHERE
 	a.id_one = 1;
 
--- Ó¦¸ÃÊÇkbµ¥Î»
+-- åº”è¯¥æ˜¯kbå•ä½
 show variables like 'join%';
