@@ -47,14 +47,12 @@
 	</appender>
 
 	<!-- mybatis日志打印-->
-	<!-- 理论上这个地方没有用 -->
-	<!--<logger name="org.apache.ibatis" level="INFO" />
-	<logger name="java.sql" level="INFO" />-->
 	<logger name="com.mysql.ample.mapper" level="DEBUG" />
 
 	<!-- 多日志环境配置 -->
 	<root level="${logLevel}">
-		<appender-ref ref="ALL" />
+		<!-- 屏蔽日志打印到硬盘 -->
+		<!--<appender-ref ref="ALL" />-->
 		<appender-ref ref="STDOUT" />
 	</root>
 	

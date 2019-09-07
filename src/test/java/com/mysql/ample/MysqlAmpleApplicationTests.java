@@ -2,6 +2,7 @@ package com.mysql.ample;
 
 import com.mysql.ample.mapper.DemoMapper;
 import com.mysql.ample.model.Demo;
+import com.mysql.ample.service.TransactionTestOne;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -21,6 +22,9 @@ public class MysqlAmpleApplicationTests {
 	@Autowired
 	DemoMapper demoMapper;
 
+	@Autowired
+	TransactionTestOne transactionTestOne;
+
 	@Test
 	public void ready() {
 		long begin = System.currentTimeMillis();
@@ -39,6 +43,21 @@ public class MysqlAmpleApplicationTests {
 		for (Demo bean : list) {
 			System.out.println(bean.getId());
 		}
+	}
+
+	@Test
+	public void test02 () {
+		transactionTestOne.testOne();
+	}
+
+	@Test
+	public void test03 () {
+		transactionTestOne.testThree();
+	}
+
+	@Test
+	public void test04 () {
+		transactionTestOne.testFive();
 	}
 	
 }
