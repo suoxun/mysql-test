@@ -19,6 +19,9 @@ public class TransactionTestTwo {
     @Autowired
     TransactionTestThree transactionTestThree;
 
+    /**
+     * 事务都回滚
+     */
     @Transactional
     public void testOne(){
         Demo demo = new Demo();
@@ -28,6 +31,9 @@ public class TransactionTestTwo {
         transactionTestThree.testOne();
     }
 
+    /**
+     * 第二个事务回滚
+     */
     public void testTwo(){
         Demo demo = new Demo();
         demo.setId(3);
