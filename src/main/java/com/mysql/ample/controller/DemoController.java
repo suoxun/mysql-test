@@ -50,11 +50,7 @@ public class DemoController {
 		AtomicInteger num = new AtomicInteger(1);
 		long start = System.currentTimeMillis();
 		for(int i = 0; i < 10000; i++){
-			pool.execute(new Runnable() {
-				public void run() {
-					demoService.updateForId(num.getAndIncrement());
-				}
-			});
+			pool.execute(() -> demoService.updateForId(num.getAndIncrement()));
 		}
 		//关闭线程池
 		pool.shutdown();
@@ -73,11 +69,7 @@ public class DemoController {
 		AtomicInteger num = new AtomicInteger(1);
 		long start = System.currentTimeMillis();
 		for(int i = 0; i < 10000; i++){
-			pool.execute(new Runnable() {
-				public void run() {
-					demoService.updateForIdOther(num.getAndIncrement());
-				}
-			});
+			pool.execute(() -> demoService.updateForIdOther(num.getAndIncrement()));
 		}
 		//关闭线程池
 		pool.shutdown();
@@ -96,11 +88,7 @@ public class DemoController {
 		AtomicInteger num = new AtomicInteger(1);
 		long start = System.currentTimeMillis();
 		for(int i = 0; i < 100; i++){
-			pool.execute(new Runnable() {
-				public void run() {
-					demoService.updateForId(num.getAndIncrement());
-				}
-			});
+			pool.execute(() -> demoService.updateForId(num.getAndIncrement()));
 		}
 		//关闭线程池
 		pool.shutdown();
@@ -119,11 +107,7 @@ public class DemoController {
 		AtomicInteger num = new AtomicInteger(1);
 		long start = System.currentTimeMillis();
 		for(int i = 0; i < 100; i++){
-			pool.execute(new Runnable() {
-				public void run() {
-					demoService.updateForIdOther(num.getAndIncrement());
-				}
-			});
+			pool.execute(() -> demoService.updateForIdOther(num.getAndIncrement()));
 		}
 		//关闭线程池
 		pool.shutdown();
